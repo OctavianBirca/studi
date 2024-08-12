@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        #word {
+            align-self: center;
+        };
+
+        #letter input {
+            width: fit-content;
+            height: fit-content;
+            padding: 12px 20px;
+
+        };
+    </style>
+
+</head>
+<body onload = "getFocus(`letter1`)">
+
+<div id="word">
+    <div id="letter">
+        <input type="text" id="letter1" placeholder="" >
+        <input type="text" id="letter2" placeholder="" >
+        <p id="values"></p>
+    </div>
+
+</div>
+
+<div></div>
+    
+
+<script>
+    function getFocus(field) {
+        document.getElementById(field).focus();
+    }
+
+    const input = document.querySelector("input");
+    const inputValue = document.getElementById("values");
+
+    input.addEventListener("input", updateValue);
+
+
+
+    function updateValue(e) {
+    let newLetter = e.target.value;  
+    inputValue.textContent = e.target.value;
+}
+
+
+
+
+</script>
+</body>
+</html>
